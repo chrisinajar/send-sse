@@ -1,6 +1,6 @@
 {
   "name": "send-sse",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Server-Sent Events over http",
   "main": "index.js",
   "scripts": {
