@@ -2,7 +2,7 @@ var isFunction = require('is-function');
 
 module.exports = sendSSE;
 
-function sendSSE (res, open, close) {
+function sendSSE (req, res, open, close) {
   var stopped = false;
   res.setHeader('Content-Type', 'text/event-stream');
 

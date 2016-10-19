@@ -12,14 +12,21 @@ var sendSSE = require('send-sse');
 var events = require('./events');
 
 http.createServer(function (req, res) {
-  sendSSE(res, events.onData);
+  sendSSE(req, res, events.onData);
 }).listen(8080);
 
 ```
 
 # API
-#### `sendSSE(response, onOpen[, onClose])` -> `close`
+#### `sendSSE(request, response, onOpen[, onClose])` -> `close`
 Create an SSE stream on the **response** object, returning a **close** method to stop the stream.
+
+##### request
+
+*Required*  
+Type: `http.ServerRequest`  
+
+Request object from `http`.
 
 ##### response
 

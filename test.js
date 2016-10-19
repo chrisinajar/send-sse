@@ -6,7 +6,7 @@ var sendSSE = require('./');
 
 test('basic', function (t) {
   var server = http.createServer(function (req, res) {
-    sendSSE(res, onOpen);
+    sendSSE(req, res, onOpen);
 
     function onOpen (sendEvent) {
       return interval(function () {
